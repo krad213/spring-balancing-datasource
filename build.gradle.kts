@@ -5,7 +5,12 @@ plugins {
 }
 
 group = "su.kore"
-version = "1.0.11.1-alpha"
+version = "1.0.11.2-alpha"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 repositories {
     mavenCentral()
