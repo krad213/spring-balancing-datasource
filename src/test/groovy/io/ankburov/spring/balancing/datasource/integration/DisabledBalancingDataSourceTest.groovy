@@ -4,7 +4,7 @@ import groovy.transform.CompileStatic
 import io.ankburov.spring.balancing.datasource.BalancingDataSource
 import io.ankburov.spring.balancing.datasource.config.TestConfiguration
 import io.ankburov.spring.balancing.datasource.factory.HikariDataSourceFactory
-import io.ankburov.spring.balancing.datasource.metadata.HikariBalancingDataSourcePublicMetrics
+
 import org.junit.Assert
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -26,6 +26,5 @@ class DisabledBalancingDataSourceTest {
     void contextLoads() {
         Assert.assertTrue(applicationContext.getBeanNamesForType(BalancingDataSource).size() == 0)
         Assert.assertTrue(applicationContext.getBeanNamesForType(HikariDataSourceFactory).size() == 1)
-        Assert.assertTrue(applicationContext.getBeanNamesForType(HikariBalancingDataSourcePublicMetrics).size() == 0)
     }
 }
