@@ -1,6 +1,7 @@
 plugins {
     java
     groovy
+    `maven-publish`
 }
 
 group = "su.kore"
@@ -36,4 +37,25 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    from(sourceSets["main"].allSource)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            artifact(tasks["sourcesJar"])
+        }
+    }
+    repositories {
+        maven {
+            name = "local"
+            url = uri("${System.getProperty("user.home")}/.m2/repository")
+        }
+    }
 }
