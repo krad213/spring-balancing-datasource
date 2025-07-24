@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
 }
 
-group = "su.kore"
+group = "com.github.krad213"
 version = "1.0.11.2-alpha"
 
 java {
