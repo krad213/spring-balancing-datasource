@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "su.kore"
-version = "1.0.11-alpha"
+version = "1.0.11.1-alpha"
 
 repositories {
     mavenCentral()
